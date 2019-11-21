@@ -37,6 +37,9 @@ extension Float: Real {
   @_transparent public static func erfc(_ x: Float) -> Float { return libm_erfcf(x) }
   @_transparent public static func exp2(_ x: Float) -> Float { return libm_exp2f(x) }
   #if os(macOS) || os(iOS) || os(tvOS) || os(watchOS)
+  @_transparent public static func cos(piTimes x: Float) -> Float { return libm_cospif(x) }
+  @_transparent public static func sin(piTimes x: Float) -> Float { return libm_sinpif(x) }
+  @_transparent public static func tan(piTimes x: Float) -> Float { return libm_tanpif(x) }
   @_transparent public static func exp10(_ x: Float) -> Float { return libm_exp10f(x) }
   #endif
   @_transparent public static func hypot(_ x: Float, _ y: Float) -> Float { return libm_hypotf(x, y) }
@@ -111,6 +114,9 @@ extension Double: Real {
   @_transparent public static func erfc(_ x: Double) -> Double { return libm_erfc(x) }
   @_transparent public static func exp2(_ x: Double) -> Double { return libm_exp2(x) }
   #if os(macOS) || os(iOS) || os(tvOS) || os(watchOS)
+  @_transparent public static func cos(piTimes x: Double) -> Double { return libm_cospi(x) }
+  @_transparent public static func sin(piTimes x: Double) -> Double { return libm_sinpi(x) }
+  @_transparent public static func tan(piTimes x: Double) -> Double { return libm_tanpi(x) }
   @_transparent public static func exp10(_ x: Double) -> Double { return libm_exp10(x) }
   #endif
   #if os(macOS) && arch(x86_64)
