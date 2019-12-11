@@ -17,14 +17,17 @@ let package = Package(
   products: [
     .library(name: "Complex", targets: ["Complex"]),
     .library(name: "Numerics", targets: ["Numerics"]),
+    .library(name: "Random", targets: ["Random"]),
     .library(name: "Real", targets: ["Real"]),
   ],
   dependencies: [
   ],
   targets: [
     .target(name: "Complex", dependencies: ["Real"]),
+    .target(name: "Integers"),
     .target(name: "Numerics", dependencies: ["Complex", "Real"]),
-    .target(name: "NumericsShims", dependencies: []),
+    .target(name: "NumericsShims"),
+    .target(name: "Random", dependencies: ["Integers"]),
     .target(name: "Real", dependencies: ["NumericsShims"]),
     
     .testTarget(name: "ComplexTests", dependencies: ["Complex", "NumericsShims"]),
